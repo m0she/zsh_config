@@ -3,14 +3,22 @@
 # this keybinding is usually associated with ^v, however, this file binds ^v to something else
 
 # do not use vi mode for zle despite EDITOR=vim
-bindkey -e
 
-autoload edit-command-line
-bindkey ^v edit-command-line
-zle -N edit-command-line
+#autoload edit-command-line
+#bindkey ^v edit-command-line
+#zle -N edit-command-line
+
+bindkey -M viins '^A' beginning-of-line
+bindkey -M viins '^E' end-of-line
+bindkey -M viins '^D' delete-char-or-list
+bindkey -M viins '^R' history-incremental-search-backward
+
+autoload -U select-word-style
+select-word-style bash
+bindkey -M viins '^[^?' backward-kill-word # ESC + backspace
 
 bindkey '^[[H' beginning-of-line
-bindkey '^[[E' end-of-line
+bindkey '^[[F' end-of-line
 bindkey '^[[3~' delete-char
 bindkey '^z' undo
 
