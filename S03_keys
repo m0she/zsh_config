@@ -17,6 +17,10 @@ autoload -U select-word-style
 select-word-style bash
 bindkey -M viins '^[^?' backward-kill-word # ESC + backspace
 
+bindkey '^[[1;9C' forward-word
+bindkey '^[[1;9D' backward-word
+bindkey '^[^[[C' forward-word
+bindkey '^[^[[D' backward-word
 bindkey '^[[H' beginning-of-line
 bindkey '^[[F' end-of-line
 bindkey '^[[3~' delete-char
