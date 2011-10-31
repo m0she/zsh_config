@@ -25,6 +25,7 @@ bindkey '^[[H' beginning-of-line
 bindkey '^[[F' end-of-line
 bindkey '^[[3~' delete-char
 bindkey '^z' undo
+bindkey '^[[Z' reverse-menu-complete
 
 eval "insert-cycledleft () { zle push-line; LBUFFER='pushd -q +1'; zle accept-line }"
 zle -N insert-cycledleft
